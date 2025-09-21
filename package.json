@@ -3,13 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "build:html": "next build && next export",
+    "new:lp": "ts-node scripts/new-lp.ts",
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.2.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^15.5.3",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^13.0.1",
     "next": "15.5.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "remark-frontmatter": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
   }
 }

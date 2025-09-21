@@ -18,7 +18,7 @@ Este documento define **papéis (agents)**, **padrões**, **fluxo de trabalho** 
 
 Responsável pelo _conteúdo_ de cada LP (texto, imagens, CTAs).
 
-- Entregáveis: arquivos `content/lps/<slug>.json` (ou `.mdx` se necessário).
+- Entregáveis: arquivos `content/lps/<slug>.mdx` (MDX with frontmatter; MDX is the canonical content format).
 - Guidelines:
   - Títulos < 60 caracteres, descrições < 160.
   - Sempre definir `title`, `description`, `sections[]`.
@@ -46,7 +46,7 @@ Define metadados por LP e padrões OG/Twitter.
 
 Mantém scripts, CLI e geração de novas LPs.
 
-- Entregáveis: `scripts/new-lp.ts`, `package.json` scripts.
+- Entregáveis: `scripts/new-lp.ts` (or `scripts/new-lp.js`), `package.json` scripts.
 - Regras:
   - Garantir que `generateStaticParams()` inclui todos os slugs.
   - CI de build + export deve falhar se houver seção inválida.
@@ -88,7 +88,7 @@ lp-scaffold/
 │  └─ ui/
 ├─ content/
 │  └─ lps/
-│     └─ landing-exemplo.json
+│     └─ landing-exemplo.mdx
 ├─ lib/
 │  ├─ lps.ts
 │  └─ meta.ts
@@ -172,12 +172,12 @@ const tpl = {
   ],
 }
 
-const file = path.join(process.cwd(), 'content', 'lps', `${slug}.json`)
+const file = path.join(process.cwd(), 'content', 'lps', `${slug}.mdx`)
 if (fs.existsSync(file)) {
   console.error('Já existe uma LP com esse slug.')
   process.exit(1)
 }
-fs.writeFileSync(file, JSON.stringify(tpl, null, 2))
+fs.writeFileSync(file, frontmatter + body)
 console.log(`LP criada em ${file}`)
 ```
 
@@ -210,7 +210,7 @@ console.log(`LP criada em ${file}`)
 
 ## Fluxo de Trabalho
 
-1. **Criar LP**: `yarn new:lp minha-lp` → edite `content/lps/minha-lp.json`.
+1. **Criar LP**: `yarn new:lp minha-lp` → edite `content/lps/minha-lp.mdx` (use frontmatter for title/description).
 2. **Rodar local**: `yarn dev` → `http://localhost:3000/minha-lp/`.
 3. **Build**: `yarn build:html` → artefatos em `out/`.
 4. **QA**: rodar Lighthouse, validar links e metas.
