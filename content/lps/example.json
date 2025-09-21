@@ -1,0 +1,53 @@
+{
+  "slug": "example",
+  "title": "Aposteiros — Torça com emoção!",
+  "description": "Comunitário de palpites e estatísticas — entre para o grupo e participe.",
+  "sections": [
+    {
+      "type": "hero",
+      "props": {
+        "title": "Torça junto com a galera!",
+        "subtitle": "Faça parte da comunidade que une futebol, estatística e paixão!",
+        "ctaLabel": "Quero entrar no grupo agora",
+        "ctaHref": "https://wa.me/00000000000",
+        "heroImage": "/apostudo/hero.jpg"
+      }
+    },
+    {
+      "type": "content",
+      "props": {
+        "body": "Entre para o grupo secreto dos Aposteiros e receba palpites, estatísticas ao vivo e benefícios que só a torcida mais ligada tem acesso.",
+        "sections": []
+      }
+    },
+    {
+      "type": "features",
+      "props": {
+        "items": [
+          { "title": "Palpites certos", "desc": "Direto no seu WhatsApp", "icon": "/apostudo/icon1.svg" },
+          {
+            "title": "Estatísticas em tempo real",
+            "desc": "Dados atualizados durante as partidas",
+            "icon": "/apostudo/icon2.svg"
+          },
+          {
+            "title": "Interação com fãs",
+            "desc": "Converse com especialistas todos os dias",
+            "icon": "/apostudo/icon3.svg"
+          },
+          { "title": "Resultados visíveis", "desc": "Acompanhe histórico e evolução", "icon": "/apostudo/icon4.svg" }
+        ]
+      }
+    },
+    {
+      "type": "cta",
+      "props": {
+        "id": "cta",
+        "title": "Torça com emoção!",
+        "body": "Faça parte da comunidade que une futebol, estatística e paixão!",
+        "button": { "label": "Participe agora do grupo", "href": "https://wa.me/00000000000" },
+        "ctaImage": "/apostudo/cta-hero.jpg"
+      }
+    }
+  ]
+}

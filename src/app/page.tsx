@@ -8,16 +8,16 @@ export default function Home(): JSX.Element {
 
   useEffect(() => {
     let mounted = true
-    import('../../content/lps/index')
+    import('content/lps/index')
       .then((mod) => {
         if (!mounted) return
-        const keys = Object.keys(mod.MDX_PAGES || {})
+        const keys = Object.keys(mod.LP_PAGES || {})
         setSlugs(keys)
       })
       .catch((err) => {
         // keep UI simple; in dev, log error to help debugging
         // eslint-disable-next-line no-console
-        console.error('Failed to load MDX index dynamically:', err)
+        console.error('Failed to load LP index dynamically:', err)
         setSlugs([])
       })
 

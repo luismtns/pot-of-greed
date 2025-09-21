@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+/* Styles specific to the apostudo LP */
+:root {
+  --lp-bg: linear-gradient(180deg, #065f46, #047857);
+  --lp-accent: #d9f99d;
+  --lp-text: #ffffff;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.apostudo-hero {
+  background: var(--lp-bg);
+  color: var(--lp-text);
+  padding: 64px 24px;
+  text-align: center;
+}
+.apostudo-hero .container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+.apostudo-hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.apostudo-hero h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+.apostudo-hero p {
+  margin-top: 12px;
+  opacity: 0.95;
+}
+.apostudo-cta {
+  background: #064e3b;
+  color: var(--lp-text);
+  padding: 48px 20px;
+  text-align: center;
+}
+.apostudo-cta .btn {
+  background: var(--lp-accent);
+  color: #064e3b;
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 600;
+}
+.apostudo-features {
+  background: #ffffff;
+  padding: 40px 20px;
+  color: #0f172a;
+}
+.apostudo-features .grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.apostudo-features .item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.apostudo-features img {
+  width: 48px;
+  height: 48px;
+}

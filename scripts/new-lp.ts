@@ -8,16 +8,25 @@ if (!slug) {
   process.exit(1)
 }
 
-const frontmatter = `---\ntitle: "Title for ${slug}"\ndescription: "A short description for ${slug}"\nhero:\n  title: "Welcome to ${slug}"\n  subtitle: "A static MDX landing"\n  cta:\n    label: "Learn more"\n    href: "#"\n---\n\n`
-
-const body = `# ${slug}\n\nWrite Markdown / MDX content here.\n\n`
-
 const dir = path.join(process.cwd(), 'content', 'lps')
 if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
-const file = path.join(dir, `${slug}.mdx`)
+const file = path.join(dir, `${slug}.json`)
 if (fs.existsSync(file)) {
   console.error('LP already exists:', file)
   process.exit(1)
 }
-fs.writeFileSync(file, frontmatter + body)
+
+const template = {
+  slug,
+  title: `Title for ${slug}`,
+  description: `A short description for ${slug}`,
+  sections: [
+    {
+      type: 'hero',
+      props: { title: `Welcome to ${slug}`, subtitle: 'A static JSON landing', ctaLabel: 'Learn more', ctaHref: '#' },
+    },
+  ],
+}
+
+fs.writeFileSync(file, JSON.stringify(template, null, 2))
 console.log('Created', file)

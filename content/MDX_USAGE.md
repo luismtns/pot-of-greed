@@ -4,7 +4,8 @@ Este documento explica o formato esperado para arquivos MDX usados como _landing
 
 Local esperado
 
-- Todos os arquivos de LP devem ficar em `content/lps/` e ter a extensão `.mdx`.
+-- Todos os arquivos de LP devem ficar em `content/lps/` e ser arquivos JSON (`.json`).
+
 - O arquivo `content/lps/index.ts` é um índice auto-gerado (pelo script `build-mdx-index`) que exporta metadados dos MDX.
 
 Estrutura mínima (frontmatter)
@@ -16,7 +17,7 @@ Cada arquivo MDX deve começar com um bloco YAML (frontmatter) contendo pelo men
 - `description`: string — descrição curta (meta `description`).
 - `sections`: array — lista de seções, cada uma com `type` e `props` (utilizado pelo renderer).
 
-Exemplo de arquivo `content/lps/exemplo.mdx`
+Exemplo de arquivo `content/lps/exemplo.json`
 
 ```mdx
 ---
@@ -55,4 +56,4 @@ Boas práticas
 
 Integração com CLI
 
-- `yarn new:lp meu-slug` cria um MDX de template em `content/lps/meu-slug.mdx`. Edite o frontmatter conforme necessário.
+-- `yarn new:lp meu-slug` cria um JSON de template em `content/lps/meu-slug.json`. Edite o arquivo conforme necessário.

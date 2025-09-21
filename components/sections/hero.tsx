@@ -1,17 +1,26 @@
-type CTA = { label?: string; href?: string }
-type HeroProps = { props?: { title?: string; subtitle?: string; cta?: CTA } }
+type Props = {
+  title: string
+  subtitle?: string
+  ctaLabel?: string
+  ctaHref?: string
+  heroImage?: string
+}
 
-export default function Hero({ props }: HeroProps) {
-  const { title, subtitle, cta } = props || {}
+export default function Hero({ title, subtitle, ctaLabel, ctaHref, heroImage }: Props) {
   return (
-    <section style={{ padding: '4rem 1rem', textAlign: 'center' }}>
-      <h1 style={{ fontSize: '2rem', margin: 0 }}>{title}</h1>
-      {subtitle ? <p style={{ marginTop: '0.5rem' }}>{subtitle}</p> : null}
-      {cta ? (
-        <p style={{ marginTop: '1rem' }}>
-          <a href={cta.href}>{cta.label}</a>
-        </p>
-      ) : null}
+    <section className='lp-hero'>
+      <div className='container'>
+        {heroImage && <img src={heroImage} alt='Hero image' className='hero-media' />}
+        <h1 className='hero-title'>{title}</h1>
+        {subtitle && <p className='hero-sub'>{subtitle}</p>}
+        {ctaLabel && ctaHref && (
+          <div className='hero-cta'>
+            <a href={ctaHref} role='button' aria-label={ctaLabel} className='btn'>
+              {ctaLabel}
+            </a>
+          </div>
+        )}
+      </div>
     </section>
   )
 }

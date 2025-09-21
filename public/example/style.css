@@ -1,0 +1,47 @@
+/* Styles specific to the example LP */
+:root {
+  --lp-bg: #0f172a;
+  --lp-accent: #60a5fa;
+  --lp-text: #fff;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.example-hero {
+  background: linear-gradient(180deg, #0f172a, #0b1220);
+  color: var(--lp-text);
+  padding: 56px 20px;
+  text-align: center;
+}
+.example-hero .container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.example-hero h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+.example-hero p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+.example-features {
+  background: #ffffff;
+  padding: 36px 18px;
+  color: #0b1220;
+}
+.example-cta {
+  background: #06202a;
+  color: var(--lp-text);
+  padding: 36px 18px;
+  text-align: center;
+}
+.example-cta .btn {
+  background: var(--lp-accent);
+  color: #06202a;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+}

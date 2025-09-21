@@ -1,0 +1,72 @@
+{
+  "slug": "apostudo",
+  "title": "Apostudo — Onde a resenha encontra a estatística",
+  "description": "Comunidade de palpites, resenha e estatísticas — entre para o grupo e participe das discussões no WhatsApp.",
+  "sections": [
+    {
+      "type": "hero",
+      "props": {
+        "title": "Torça, participe e vibre com o Apostudo",
+        "subtitle": "Conteúdo rápido, direto e divertido no seu celular",
+        "ctaLabel": "Quero entrar no grupo agora",
+        "ctaHref": "https://wa.me/00000000000",
+        "heroImage": "/apostudo/hero-bg.png"
+      }
+    },
+    {
+      "type": "content",
+      "props": {
+        "body": "Entre para a comunidade que mistura estatísticas, resenha de torcida e os palpites mais quentes da rodada. É futebol com muita emoção!",
+        "sections": [
+          {
+            "heading": "O que você encontra aqui",
+            "items": [
+              { "label": "Palpites certos", "text": "Baseados em estatísticas e análise prática." },
+              { "label": "Conteúdo rápido", "text": "Dicas e resenhas diretas para acompanhar as rodadas." },
+              { "label": "Comunidade ativa", "text": "Troca de ideias com torcedores e especialistas." },
+              { "label": "Resultados visíveis", "text": "Histórico e progresso dos palpites." }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "props": {
+        "items": [
+          {
+            "title": "Palpites certos",
+            "desc": "Baseados em estatísticas e análise prática",
+            "icon": "/apostudo/icon-1.png"
+          },
+          {
+            "title": "Conteúdo rápido",
+            "desc": "Dicas e resenhas diretas para acompanhar as rodadas",
+            "icon": "/apostudo/icon-2.png"
+          },
+          {
+            "title": "Comunidade ativa",
+            "desc": "Interaja com torcedores e especialistas",
+            "icon": "/apostudo/icon-3.png"
+          },
+          {
+            "title": "Resultados visíveis",
+            "desc": "Acompanhe histórico e evolução dos palpites",
+            "icon": "/apostudo/icon-4.png"
+          }
+        ],
+        "backgroundImage": "/apostudo/icons-section-strip.png"
+      }
+    },
+    {
+      "type": "cta",
+      "props": {
+        "id": "cta",
+        "title": "Onde a resenha encontra a estatística",
+        "body": "Torça, interaja e se divirta com quem entende do jogo e da emoção. Entre agora no grupo de WhatsApp.",
+        "button": { "label": "Participe agora do grupo", "href": "https://wa.me/00000000000" },
+        "ctaImage": "/apostudo/cta-section-bg.png"
+      }
+    }
+  ]
+}

@@ -37,7 +37,7 @@ Open `http://localhost:3000` in your browser.
 
 ## How To Add A New Landing Page
 
-1. Add a file in `content/lps/<slug>.mdx` describing `title` and `description` in the frontmatter and page content in MDX.
+1. Add a file in `content/lps/<slug>.json` describing `title`, `description` and `sections[]` in JSON.
 2. Ensure any images are placed in `public/` and referenced with a relative path.
 3. Confirm `generateStaticParams()` (if present) includes the new slug.
 

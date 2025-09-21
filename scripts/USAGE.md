@@ -11,7 +11,7 @@ Scripts principais
     - `yarn new:lp meu-slug`
   - Execução direta no PowerShell (quando `ts-node` está instalado globalmente ou em devDependencies):
     - `npx ts-node scripts/new-lp.ts meu-slug`
-  - O script cria um arquivo `content/lps/<slug>.mdx`. Se o arquivo já existir, ele falha com mensagem.
+  - O script cria um arquivo `content/lps/<slug>.json`. Se o arquivo já existir, ele falha com mensagem.
 
 - `build-mdx-index.ts` / `build-mdx-index.cjs`
   - Objetivo: gerar um índice/manifest dos conteúdos MDX (por exemplo `content/lps/index.ts`).
@@ -22,7 +22,8 @@ Scripts principais
 
 Boas práticas
 
-- Sempre verifique o slug antes de criar: use `yarn new:lp meu-slug` e abra `content/lps/meu-slug.mdx` para editar.
+-- Sempre verifique o slug antes de criar: use `yarn new:lp meu-slug` e abra `content/lps/meu-slug.json` para editar.
+
 - Se estiver com erro de execução relacionado ao `ts-node`, instale localmente: `yarn add -D ts-node typescript @types/node`.
 - Os exemplos de comandos abaixo são para PowerShell no Windows; em Bash a sintaxe é a mesma (semilar).
 

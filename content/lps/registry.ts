@@ -1,11 +1,12 @@
-// Registry of MDX components by slug.
-// Keep this file simple — add new imports when you add new MDX pages.
-import Example from './example.mdx'
+// Registry of JSON pages by slug.
+import apostudo from './apostudo.json'
+import example from './example.json'
 
-export const MDX_COMPONENTS: { [slug: string]: any } = {
-  example: Example,
+export const LP_PAGES_REGISTRY: { [slug: string]: any } = {
+  example,
+  apostudo,
 }
 
-export type MDXComponentsMap = typeof MDX_COMPONENTS
+export type LPRegistry = typeof LP_PAGES_REGISTRY
 
-export default MDX_COMPONENTS
+export default LP_PAGES_REGISTRY

@@ -18,7 +18,7 @@ Este documento define **papéis (agents)**, **padrões**, **fluxo de trabalho** 
 
 Responsável pelo _conteúdo_ de cada LP (texto, imagens, CTAs).
 
-- Entregáveis: arquivos `content/lps/<slug>.mdx` (MDX with frontmatter; MDX is the canonical content format).
+- Entregáveis: arquivos `content/lps/<slug>.json` (JSON content files; JSON is the canonical content format).
 - Guidelines:
   - Títulos < 60 caracteres, descrições < 160.
   - Sempre definir `title`, `description`, `sections[]`.
@@ -88,7 +88,7 @@ lp-scaffold/
 │  └─ ui/
 ├─ content/
 │  └─ lps/
-│     └─ landing-exemplo.mdx
+│     └─ landing-exemplo.json
 ├─ lib/
 │  ├─ lps.ts
 │  └─ meta.ts
@@ -172,12 +172,12 @@ const tpl = {
   ],
 }
 
-const file = path.join(process.cwd(), 'content', 'lps', `${slug}.mdx`)
+const file = path.join(process.cwd(), 'content', 'lps', `${slug}.json`)
 if (fs.existsSync(file)) {
   console.error('Já existe uma LP com esse slug.')
   process.exit(1)
 }
-fs.writeFileSync(file, frontmatter + body)
+fs.writeFileSync(file, JSON.stringify(tpl, null, 2))
 console.log(`LP criada em ${file}`)
 ```
 
@@ -210,7 +210,7 @@ console.log(`LP criada em ${file}`)
 
 ## Fluxo de Trabalho
 
-1. **Criar LP**: `yarn new:lp minha-lp` → edite `content/lps/minha-lp.mdx` (use frontmatter for title/description).
+1. **Criar LP**: `yarn new:lp minha-lp` → edite `content/lps/minha-lp.json` (update `title`, `description`, `sections`).
 2. **Rodar local**: `yarn dev` → `http://localhost:3000/minha-lp/`.
 3. **Build**: `yarn build:html` → artefatos em `out/`.
 4. **QA**: rodar Lighthouse, validar links e metas.
@@ -220,7 +220,7 @@ console.log(`LP criada em ${file}`)
 
 ## Extensões opcionais
 
-- **MDX** por LP (quando precisar de rich content): criar `content/lps/<slug>.mdx` e um loader em `lib/lps-mdx.ts`.
+- **JSON** por LP: criar `content/lps/<slug>.json` com `title`, `description`, `sections[]`.
 - **Temas** por LP: `theme` no JSON + CSS vars no `layout.tsx`.
 - **i18n** manual (slugs por idioma): `pt/<slug>`, `en/<slug>` gerados em `generateStaticParams()`.
 
