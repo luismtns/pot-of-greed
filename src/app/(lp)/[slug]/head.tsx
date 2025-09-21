@@ -1,16 +1,14 @@
-import fs from 'fs'
-import matter from 'gray-matter'
-import path from 'path'
+import { MDX_PAGES } from '../../../../content/lps/index'
 
 export default function Head({ params }: { params: { slug: string } }) {
   const { slug } = params
-  const file = path.join(process.cwd(), 'content', 'lps', `${slug}.mdx`)
-  if (!fs.existsSync(file)) return null
-  const { data } = matter(fs.readFileSync(file, 'utf8'))
+  const entry = (MDX_PAGES as any)[slug]
+  if (!entry) return null
+  const meta = entry.meta ?? {}
   return (
     <>
-      <title>{data.title}</title>
-      <meta name='description' content={data.description} />
+      <title>{meta.title ?? ''}</title>
+      {meta.description ? <meta name='description' content={meta.description} /> : null}
     </>
   )
 }

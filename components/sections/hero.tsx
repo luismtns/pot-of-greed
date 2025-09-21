@@ -1,7 +1,7 @@
 type CTA = { label?: string; href?: string }
-type HeroProps = { title?: string; subtitle?: string; cta?: CTA }
+type HeroProps = { props?: { title?: string; subtitle?: string; cta?: CTA } }
 
-export default function Hero({ props }: { props?: HeroProps }) {
+export default function Hero({ props }: HeroProps) {
   const { title, subtitle, cta } = props || {}
   return (
     <section style={{ padding: '4rem 1rem', textAlign: 'center' }}>
