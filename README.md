@@ -1,4 +1,4 @@
-![Pot of Greed](./pot-of-greed.png)
+![Pot of Greed](./public/pot-of-greed.png)
 
 # Pot Of Greed
 

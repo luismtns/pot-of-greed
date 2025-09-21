@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
-    "build:html": "next build && next export",
+    "build:html": "next build",
     "generate-mdx-index": "ts-node scripts/build-mdx-index.ts",
     "new:lp": "ts-node scripts/new-lp.ts",
     "start": "next start"

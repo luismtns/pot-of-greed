@@ -1,3 +1,4 @@
+import MDXClientLoader from '../../../../components/MDXClientLoader'
 import { MDX_PAGES } from '../../../../content/lps/index'
 
 export async function generateStaticParams() {
@@ -10,13 +11,12 @@ export default function Page(props: any): JSX.Element {
   const entry = (MDX_PAGES as any)[slug]
   if (!entry) return <div>Not found</div>
 
-  const Component = entry.Component
-
+  // render metadata server-side, and load MDX content on the client only
   return (
-    <html>
-      <body>
-        <Component />
-      </body>
-    </html>
+    <main>
+      <h1>{entry.meta?.title ?? slug}</h1>
+      <p>{entry.meta?.description}</p>
+      <MDXClientLoader slug={slug} />
+    </main>
   )
 }
