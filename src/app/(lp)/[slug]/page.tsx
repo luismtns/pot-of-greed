@@ -1,4 +1,3 @@
-import React from 'react'
 import { MDX_PAGES } from '../../../../content/lps/index'
 
 export async function generateStaticParams() {
